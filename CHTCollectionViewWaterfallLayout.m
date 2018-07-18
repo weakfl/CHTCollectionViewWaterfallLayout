@@ -421,7 +421,7 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
 
         CGRect frameWithEdgeInsets = UIEdgeInsetsInsetRect(attribute.frame, self.collectionView.contentInset);
         CGPoint origin = frameWithEdgeInsets.origin;
-        origin.y = self.collectionView.contentOffset.y + self.collectionView.contentInset.top;
+        origin.y = MAX(self.collectionView.contentOffset.y + self.collectionView.contentInset.top, 0);
 
         attribute.zIndex = 1024;
         attribute.frame = (CGRect){
