@@ -505,7 +505,7 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     if (self.collectionView.contentOffset.y != proposedContentOffset.y && self.indexPath != nil) {
         proposedContentOffset.y = ((UICollectionViewLayoutAttributes*)self.allItemAttributes[self.indexPath.row]).frame.origin.y;
     }
-
+    self.indexPath = nil;
     if ([self.collectionView contentOffset].y == 0)
         return CGPointMake(proposedContentOffset.x, 0);
     else
